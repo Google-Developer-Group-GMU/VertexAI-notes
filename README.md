@@ -1,6 +1,4 @@
-# Starting notes
-
-## How to set up your project with Google Cloud services
+# How to set up your project with Google Cloud services
 
 ## Create a Google Cloud account and check your Dashboard
 
@@ -39,3 +37,14 @@ gcloud auth application-default login
 ```
 
 Check out our example "langchain_pgvector.ipynb" and other repositories on our github.
+
+### Something to Be Aware Of  
+
+- Some services are only available in certain regions. For example, the PaLM model for text generation is not accessible in `us-east5` or `us-south1`.  
+
+- If your model returns the following error:  
+  **FailedPrecondition: "400 Project `[PROJECT_ID]` is not allowed to use Publisher Model `projects/[PROJECT_NAME]/locations/us-central1/publishers/google/models/text-bison@002`"**  
+  - Check your **IAM** settings to ensure you have the necessary permissions to access the model.  
+  - Visit [this page](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/locations) to verify model availability by region.  
+
+- Always create a **database** to store your post-processed data for future use. The Google API is not always consistent, and you want to avoid rerunning computationally expensive tasks.
