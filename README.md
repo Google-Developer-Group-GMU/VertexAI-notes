@@ -47,4 +47,6 @@ Check out our example "langchain_pgvector.ipynb" and other repositories on our g
   - Check your **IAM** settings to ensure you have the necessary permissions to access the model.  
   - Visit [this page](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/locations) to verify model availability by region.  
 
+- Some models are no longer supported, though this is not always documented on Google's website. In short, if you're looking for **TextGeneration** for summarization or chat functionality, always start with **Gemini** first. Models like **PaLM** can be tricky to use, yet they remain popular in many tutorials.
+
 - Always create a **database** to store your post-processed data for future use. The Google API is not always consistent, and you want to avoid rerunning computationally expensive tasks.
